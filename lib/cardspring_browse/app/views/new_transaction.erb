@@ -12,14 +12,21 @@
   </div>
 
   <div class="field">
-    <label for="business_id">business_id</label>
-    <input  id="business_id" type="text" name="transaction[business_id]" />
+    <label for="business_or_store">Business or Store</label>
+      <select id="business_or_store" name="business_or_store">
+        <option data-target="business_picker" value="business" selected>Business</option>
+        <option data-target="store_picker" value="store">Store</option>
+      </select>
   </div>
 
-  <!--
-  <div class="field">
+  <div class="field" id="business_picker">
+    <label for="business_id">business_id</label>
+    <input id="business_id" type="text" name="transaction[business_id]" />
+  </div>
+
+  <div class="field" data-hide id="store_picker">
     <label for="store_id">store_id</label>
-    <input  id="store_id" type="text" name="transaction[store_id]" />
+    <input id="store_id" type="text" name="transaction[store_id]" />
   </div>
 
   <div class="field">
@@ -29,11 +36,24 @@
 
   <div class="field">
     <label for="purchase_date_time">purchase_date_time</label>
-    <input  id="purchase_date_time" type="text" name="transaction[purchase_date_time]" />
+    <input  id="purchase_date_time" type="text" name="transaction[purchase_date_time]" /> (format: YYYY-MM-DD HH:MM:SS)
   </div>
-  -->
+
 
   <input type="submit" />
 </form>
 
 <a href="<%= back_url %>">Back</a>
+
+<script type='text/javascript'>
+
+  $(function($){
+    $("div.field[data-hide]").hide();
+    $("#business_or_store").on("change", function(e){
+      $("#business_or_store option").each(function(i, value) { $("#" + $(value).data("target")).hide() })
+      $(document.getElementById($("#business_or_store option:selected").data("target"))).show();
+    });
+  });
+
+
+</script>
