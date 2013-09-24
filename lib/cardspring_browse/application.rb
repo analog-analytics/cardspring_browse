@@ -5,6 +5,7 @@ require_relative 'app/events'
 require_relative 'app/businesses'
 require_relative 'app/apps'
 require_relative 'app/transactions'
+require_relative 'app/credit_cards'
 
 module CardspringBrowse
   class Application < Sinatra::Base
@@ -23,6 +24,7 @@ module CardspringBrowse
     use CardspringBrowse::App::Businesses
     use CardspringBrowse::App::Apps
     use CardspringBrowse::App::Transactions
+    use CardspringBrowse::App::CreditCards
 
     def initialize(app, config_file = __FILE__)
       super(app)
