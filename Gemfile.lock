@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cardspring_browse (0.2.4)
+    cardspring_browse (0.2.5)
       faraday (~> 0.8.8)
       sinatra (~> 1.4.3)
 

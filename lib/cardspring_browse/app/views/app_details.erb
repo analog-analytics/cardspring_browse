@@ -1,7 +1,7 @@
 <h2>App Details</h2>
 
 <p>Id: <%= app['id'] %></p>
-<p>Uri: <a href="<%= url(app['_uri']) %>"><%= app['_uri'] %></a></p>
+<p>Uri: <a href="<%= url(app['_uri']) %>"><%= h(app['_uri']) %></a></p>
 <p><b>Active:</b> <%= app['active'] %></p>
 <p><b>Status:</b> <%= app['status'] %></p>
 <p><b>Business Id:</b> <%= app['business_id'] %></p>

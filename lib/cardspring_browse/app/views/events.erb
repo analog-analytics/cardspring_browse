@@ -1,7 +1,7 @@
 <h2>Events</h2>
 
 <div class="pagination">
-<a href="<%= previous_url %>">Previous</a> | <a href="<%= url("v1/events") %>">Events</a> | <a href="<%= next_url %>">Next</a>
+<a href="<%= previous_url %>">Previous</a> | <a href="<%= url("/v1/events") %>">Events</a> | <a href="<%= next_url %>">Next</a>
 </div>
 <table>
   <thead>
@@ -18,9 +18,9 @@
   <% Array(events).each do |event| %>
 
     <tr>
-      <td><a href="<%= event['_uri'] %>"><%= event['id'] %></a></td>
+      <td><a href="<%= url(event['_uri']) %>"><%= event['id'] %></a></td>
       <td><%= event['type'] %></td>
-      <td><a href="<%= event['transaction']['_uri'] %>"><%= event['transaction']['id'] %></a></td>
+      <td><a href="<%= url(event['transaction']['_uri']) %>"><%= event['transaction']['id'] %></a></td>
       <td><%=  %> </td>
       <td><%= event['creation_date_time_utc'] %></td>
       <td><%= event['delivery_date_time_utc'] %></td>

@@ -7,7 +7,7 @@
 </div>
 
 <p>Id: <%= business['id'] %></p>
-<p>Uri: <a href="<%= url(business['_uri']) %>"><%= business['_uri'] %></a></p>
+<p>Uri: <a href="<%= url(business['_uri']) %>"><%= h(business['_uri']) %></a></p>
 <p><b>Business Directory Id:</b> <%= business['business_directory_id'] %></p>
 <p><b>Name:</b> <%= business['name'] %></p>
 <p><b>Phone:</b> <%= business['phone'] %></p>

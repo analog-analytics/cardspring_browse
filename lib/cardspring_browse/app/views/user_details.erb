@@ -5,7 +5,7 @@
 </div>
 
 <p>Id: <%= user['id'] %></p>
-<p>Uri: <a href="<%= url(user['_uri']) %>"><%= user['_uri'] %></a></p>
+<p>Uri: <a href="<%= url(user['_uri']) %>"><%= h(user['_uri']) %></a></p>
 
 <a href="<%= url("/v1/credit_cards/new/#{user['id']}") %>">New Card </a> 
 <% unless user['cards'].nil? %>
